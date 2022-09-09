@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Toast from './Toast';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
@@ -18,7 +19,8 @@ root.render(
 //serviceWorkerRegistration.register();
 serviceWorkerRegistration.register({
   onUpdate: registration => {
-    alert('New version available!  Ready to update?');
+    //alert('New version available!  Ready to update?');
+    Toast();
     if (registration && registration.waiting) {
       registration.waiting.postMessage({ type: 'SKIP_WAITING' });
     }
